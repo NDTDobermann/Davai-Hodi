@@ -13,26 +13,37 @@
       backdrop-filter: blur(6px);
     }
 
-    header {
-      background: url('cthulhu.jpg') center/cover no-repeat;
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
-      position: relative;
-    }
+    .header {
+  background-image: url('cthulhu.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px;
 
-    header::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-color: rgba(0, 0, 64, 0.5);
-      z-index: 0;
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    header * {
-      position: relative;
-      z-index: 1;
-    }
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);  /* полупрозрачная тень */
+  backdrop-filter: blur(2px);     /* лёгкое размытие */
+  z-index: 1;
+}
+
+.header h1,
+.header p {
+  position: relative;
+  z-index: 2;
+}
 
     .section, footer {
       background-color: rgba(0, 0, 0, 0.6);
